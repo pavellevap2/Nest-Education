@@ -4,11 +4,11 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { Cofee } from './enteties/cofee.entity';
+import { Coffee } from './enteties/cofee.entity';
 
 @Injectable()
 export class CofeesService {
-  private coffees: Cofee[] = [
+  private coffees: Coffee[] = [
     {
       id: 1,
       name: 'Shipwreck Roast',

@@ -1,4 +1,4 @@
-export declare class Cofee {
+export declare class Coffee {
     id: number;
     name: string;
     brand: string;

@@ -1,8 +1,8 @@
-import { Cofee } from './enteties/cofee.entity';
+import { Coffee } from './enteties/cofee.entity';
 export declare class CofeesService {
     private coffees;
-    findAll(): Cofee[];
-    findOne(id: string): Cofee;
+    findAll(): Coffee[];
+    findOne(id: string): Coffee;
     create(createCoffeeDto: any): void;
     update(id: string, updateCoffeeDto: any): void;
     remove(id: string): void;
