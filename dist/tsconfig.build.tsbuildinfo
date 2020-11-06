@@ -2481,14 +2481,14 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
-      "../src/cofees/enteties/cofee.entity.ts": {
-        "version": "df45471f8e5bb3a9652881e142473e9fb1611a7e997780c4b5ae002262dacbd3",
-        "signature": "e4aebe3c70ebb799ff41d1032579e390adcdbc275d06052a6fcf034f5efe40e2",
+      "../src/cofees/enteties/flavor.entity.ts": {
+        "version": "c37d87f1176f2edcf7abaa51a489e1b0e8305a2b195a39d88d8f92b8bb5ba0a5",
+        "signature": "1fdf75ed4bd88b91c36e4508864e89d3e92367df7a6cc7329d7361c7f2afecf9",
         "affectsGlobalScope": false
       },
-      "../src/cofees/cofees.service.ts": {
-        "version": "18b32475f09136568def3cae1919d3d260f7b7bd425ac1da9a334fcf74e1e15a",
-        "signature": "9eabd1602ce52a6283774e1dcb713c56848a09ba3b6df168ec62a7947c828bcd",
+      "../src/cofees/enteties/cofee.entity.ts": {
+        "version": "efef58846aaaabe864ec5a876879002fbf096f063bc0cbcfb20eab1a9dc67797",
+        "signature": "e4aebe3c70ebb799ff41d1032579e390adcdbc275d06052a6fcf034f5efe40e2",
         "affectsGlobalScope": false
       },
       "../node_modules/class-validator/types/validation/validationerror.d.ts": {
@@ -3156,13 +3156,18 @@
         "signature": "0695e3c78a22eb44058db77bb622ea079a1a8f9dc41867ead62b581b93a8527b",
         "affectsGlobalScope": false
       },
+      "../src/cofees/cofees.service.ts": {
+        "version": "c8831e42eaf7bb61a04ef5398c4c1c4a5ad1b9e7c00d4814f96b2682b448de91",
+        "signature": "1d98b2634748cdfe442c006c0fe7e0fbe3f10615b0360b9013bcdd99713ceb51",
+        "affectsGlobalScope": false
+      },
       "../src/cofees/cofees.controller.ts": {
         "version": "a666e0431cbb326adc21f520afb64d98830c6778f6dc8b23d53e8a1228bba062",
-        "signature": "9a2824465f2335626318f9ed236884b53a095c68a1caaca109e3a55b55fdf341",
+        "signature": "46237592fc64c28ecc01802c10536a23ca7a3f26e85cf6fd7318379f2739315d",
         "affectsGlobalScope": false
       },
       "../src/cofees/cofees.module.ts": {
-        "version": "2088bb2a1009611584a411ff3df66657230254e827bece130ebd227ed53aa944",
+        "version": "ee839448fb104b44e20f9fd75899cdc1e8f62711b764bffb9205c29733d7a664",
         "signature": "d3a19632d9dfefef1b3451bcece8da21fe7079f14d42da4cf45eb1c1b6ed3d09",
         "affectsGlobalScope": false
       },
@@ -6790,10 +6795,15 @@
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/cofees/cofees.controller.ts",
         "../src/cofees/cofees.service.ts",
-        "../src/cofees/enteties/cofee.entity.ts"
+        "../src/cofees/enteties/cofee.entity.ts",
+        "../src/cofees/enteties/flavor.entity.ts"
       ],
       "../src/cofees/cofees.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/cofees/dto/create-coffee.dto.ts",
+        "../src/cofees/dto/update-coffee.dto.ts",
         "../src/cofees/enteties/cofee.entity.ts"
       ],
       "../src/cofees/dto/create-coffee.dto.ts": [
@@ -6804,7 +6814,12 @@
         "../src/cofees/dto/create-coffee.dto.ts"
       ],
       "../src/cofees/enteties/cofee.entity.ts": [
-        "../node_modules/typeorm/index.d.ts"
+        "../node_modules/typeorm/index.d.ts",
+        "../src/cofees/enteties/flavor.entity.ts"
+      ],
+      "../src/cofees/enteties/flavor.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/cofees/enteties/cofee.entity.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -9689,11 +9704,17 @@
         "../src/cofees/enteties/cofee.entity.ts"
       ],
       "../src/cofees/cofees.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/cofees/dto/create-coffee.dto.ts",
+        "../src/cofees/dto/update-coffee.dto.ts",
         "../src/cofees/enteties/cofee.entity.ts"
       ],
       "../src/cofees/dto/update-coffee.dto.ts": [
         "../node_modules/@nestjs/mapped-types/index.d.ts",
         "../src/cofees/dto/create-coffee.dto.ts"
+      ],
+      "../src/cofees/enteties/flavor.entity.ts": [
+        "../src/cofees/enteties/cofee.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -10472,6 +10493,7 @@
       "../src/cofees/dto/create-coffee.dto.ts",
       "../src/cofees/dto/update-coffee.dto.ts",
       "../src/cofees/enteties/cofee.entity.ts",
+      "../src/cofees/enteties/flavor.entity.ts",
       "../src/main.ts",
       "../src/users/users.service.ts"
     ]

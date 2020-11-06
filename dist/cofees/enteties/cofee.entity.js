@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Coffee = void 0;
 const typeorm_1 = require("typeorm");
+const flavor_entity_1 = require("./flavor.entity");
 let Coffee = class Coffee {
 };
 __decorate([
@@ -26,7 +27,8 @@ __decorate([
     __metadata("design:type", String)
 ], Coffee.prototype, "brand", void 0);
 __decorate([
-    typeorm_1.Column('json', { nullable: true }),
+    typeorm_1.JoinTable(),
+    typeorm_1.ManyToMany(type => flavor_entity_1.Flavor, flavor => flavor.cofees),
     __metadata("design:type", Array)
 ], Coffee.prototype, "flavors", void 0);
 Coffee = __decorate([

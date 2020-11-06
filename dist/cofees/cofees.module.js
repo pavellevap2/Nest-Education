@@ -12,11 +12,12 @@ const typeorm_1 = require("@nestjs/typeorm");
 const cofees_controller_1 = require("./cofees.controller");
 const cofees_service_1 = require("./cofees.service");
 const cofee_entity_1 = require("./enteties/cofee.entity");
+const flavor_entity_1 = require("./enteties/flavor.entity");
 let CoffeesModule = class CoffeesModule {
 };
 CoffeesModule = __decorate([
     common_1.Module({
-        imports: [typeorm_1.TypeOrmModule.forFeature([cofee_entity_1.Coffee])],
+        imports: [typeorm_1.TypeOrmModule.forFeature([cofee_entity_1.Coffee, flavor_entity_1.Flavor])],
         controllers: [cofees_controller_1.CofeesController],
         providers: [cofees_service_1.CofeesService],
     })
