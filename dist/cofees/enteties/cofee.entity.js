@@ -21,14 +21,14 @@ __decorate([
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Coffee.prototype, "name", void 0);
+], Coffee.prototype, "title", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Coffee.prototype, "brand", void 0);
 __decorate([
     typeorm_1.JoinTable(),
-    typeorm_1.ManyToMany(type => flavor_entity_1.Flavor, flavor => flavor.cofees),
+    typeorm_1.ManyToMany(type => flavor_entity_1.Flavor, flavor => flavor.cofees, { cascade: true }),
     __metadata("design:type", Array)
 ], Coffee.prototype, "flavors", void 0);
 Coffee = __decorate([

@@ -13,7 +13,7 @@ export class Coffee {
   id: number;
 
   @Column()
-  name: string;
+  title: string;
 
   @Column()
   brand: string;
@@ -22,6 +22,7 @@ export class Coffee {
   @ManyToMany(
     type => Flavor,
     flavor => flavor.cofees,
+    { cascade: true },
   )
-  flavors: string[];
+  flavors: Flavor[];
 }
