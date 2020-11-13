@@ -1,6 +1,7 @@
 import {
   HttpException,
   HttpStatus,
+  Inject,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
@@ -20,6 +21,8 @@ export class CofeesService {
 
     @InjectRepository(Flavor)
     private readonly flavorRepository: Repository<Flavor>,
+
+    @Inject('COFFEE_BRANDS') coffeeBrands: string[],
   ) {}
 
   findAll(paginationQuery: PaginationQueryDto) {

@@ -7,7 +7,7 @@ import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 export declare class CofeesService {
     private readonly coffeeRepository;
     private readonly flavorRepository;
-    constructor(coffeeRepository: Repository<Coffee>, flavorRepository: Repository<Flavor>);
+    constructor(coffeeRepository: Repository<Coffee>, flavorRepository: Repository<Flavor>, coffeeBrands: string[]);
     findAll(paginationQuery: PaginationQueryDto): Promise<Coffee[]>;
     findOne(id: string): Promise<Coffee>;
     create(createCoffeeDto: CreateCoffeeDto): Promise<Coffee>;

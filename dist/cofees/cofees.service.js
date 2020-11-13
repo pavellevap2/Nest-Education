@@ -19,7 +19,7 @@ const typeorm_2 = require("typeorm");
 const cofee_entity_1 = require("./enteties/cofee.entity");
 const flavor_entity_1 = require("./enteties/flavor.entity");
 let CofeesService = class CofeesService {
-    constructor(coffeeRepository, flavorRepository) {
+    constructor(coffeeRepository, flavorRepository, coffeeBrands) {
         this.coffeeRepository = coffeeRepository;
         this.flavorRepository = flavorRepository;
     }
@@ -70,8 +70,9 @@ CofeesService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(cofee_entity_1.Coffee)),
     __param(1, typeorm_1.InjectRepository(flavor_entity_1.Flavor)),
+    __param(2, common_1.Inject('COFFEE_BRANDS')),
     __metadata("design:paramtypes", [typeorm_2.Repository,
-        typeorm_2.Repository])
+        typeorm_2.Repository, Array])
 ], CofeesService);
 exports.CofeesService = CofeesService;
 //# sourceMappingURL=cofees.service.js.map
