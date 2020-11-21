@@ -12,11 +12,14 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
+import { ApiForbiddenResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('cofees')
 @Controller('cofees')
 export class CofeesController {
   constructor(private readonly coffeesService: CofeesService) {}
 
+  @ApiForbiddenResponse({ description: 'Forbidden.' })
   @Get()
   findAll(@Query() paginationQuery: PaginationQueryDto) {
     // const { limit, offset } = paginationQuery;

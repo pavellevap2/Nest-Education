@@ -13,11 +13,13 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CofeesController = void 0;
+const openapi = require("@nestjs/swagger");
 const cofees_service_1 = require("./cofees.service");
 const create_coffee_dto_1 = require("./dto/create-coffee.dto");
 const update_coffee_dto_1 = require("./dto/update-coffee.dto");
 const pagination_query_dto_1 = require("../common/dto/pagination-query.dto");
 const common_1 = require("@nestjs/common");
+const swagger_1 = require("@nestjs/swagger");
 let CofeesController = class CofeesController {
     constructor(coffeesService) {
         this.coffeesService = coffeesService;
@@ -39,7 +41,9 @@ let CofeesController = class CofeesController {
     }
 };
 __decorate([
+    swagger_1.ApiForbiddenResponse({ description: 'Forbidden.' }),
     common_1.Get(),
+    openapi.ApiResponse({ status: 200, type: [require("./enteties/cofee.entity").Coffee] }),
     __param(0, common_1.Query()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [pagination_query_dto_1.PaginationQueryDto]),
@@ -47,6 +51,7 @@ __decorate([
 ], CofeesController.prototype, "findAll", null);
 __decorate([
     common_1.Get(':id'),
+    openapi.ApiResponse({ status: 200, type: require("./enteties/cofee.entity").Coffee }),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
@@ -54,6 +59,7 @@ __decorate([
 ], CofeesController.prototype, "findOne", null);
 __decorate([
     common_1.Post(),
+    openapi.ApiResponse({ status: 201, type: require("./enteties/cofee.entity").Coffee }),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_coffee_dto_1.CreateCoffeeDto]),
@@ -61,6 +67,7 @@ __decorate([
 ], CofeesController.prototype, "create", null);
 __decorate([
     common_1.Patch(':id'),
+    openapi.ApiResponse({ status: 200, type: require("./enteties/cofee.entity").Coffee }),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_coffee_dto_1.UpdateCoffeeDto]),
@@ -68,12 +75,14 @@ __decorate([
 ], CofeesController.prototype, "update", null);
 __decorate([
     common_1.Delete(':id'),
+    openapi.ApiResponse({ status: 200, type: require("./enteties/cofee.entity").Coffee }),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], CofeesController.prototype, "remove", null);
 CofeesController = __decorate([
+    swagger_1.ApiTags('cofees'),
     common_1.Controller('cofees'),
     __metadata("design:paramtypes", [cofees_service_1.CofeesService])
 ], CofeesController);
